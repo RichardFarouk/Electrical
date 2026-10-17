@@ -135,6 +135,13 @@
       event.preventDefault();
       document.getElementById('form-note').textContent = `Received. We'll get back shortly`;
     });
+
+    window.onbeforeunload = () => {
+  for(const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+    }
+    
   </script>
 </body>
 </html>
