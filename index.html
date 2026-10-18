@@ -133,14 +133,6 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('contact-form').addEventListener('submit', event => {
       event.preventDefault();
-      document.getElementById('form-note').textContent = `Received. We'll get back shortly`;
-    });
-
-    window.onbeforeunload = () => {
-  for(const form of document.getElementsByTagName('form')) {
-    form.reset();
-  }
-    }
 
   
       const name = document.getElementById('name').value.trim();
