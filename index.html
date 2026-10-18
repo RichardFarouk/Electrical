@@ -141,6 +141,32 @@
     form.reset();
   }
     }
+
+  
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      // Replace this with the client's real WhatsApp number.
+     
+      const businessNumber = '2349130880164';
+
+      const whatsappMessage =
+        `New Client Request: ${service}\n\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Service: ${service}\n` +
+        `Message: ${message}`;
+
+      const whatsappURL =
+        `https://wa.me/${businessNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+      document.getElementById('form-note').textContent =
+        'Opening WhatsApp. Please press Send there to deliver your request.';
+
+      window.location.href = whatsappURL;
+    });
     
   </script>
 </body>
